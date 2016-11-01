@@ -90,7 +90,7 @@ class Data_processor(object):
         with open(embedding_name) as f:
             for line in f:
                 words = line.split()
-                dictionary[words[0]] = len(dictionary)
+                ifdictionary[words[0]] = len(dictionary)
                 for i in range(size):
                     embedding[len(dictionary)-1][i] = np.float32(words[i+1])
             reverse_dictionary = dict(zip(dictionary.values(),dictionary.keys()))
