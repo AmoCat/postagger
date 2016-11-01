@@ -110,10 +110,10 @@ class Data_processor(object):
         return len(count)
 
     def gen_label_vector(self, label_size, label, lab_to_int_name = 'lab_to_int_dict'):
-        vector = np.zeros([label_size], dtype = np.int32)
+        vector = np.zeros([label_size], dtype = np.float32)
         lab_to_int = pkl.load(open(lab_to_int_name, 'r'))
         index = lab_to_int[label]
-        vector[index] = 1
+        vector[index] = 1.0
         return vector
 
     def gen_data(self, in_filename='./fsentences.txt'):
